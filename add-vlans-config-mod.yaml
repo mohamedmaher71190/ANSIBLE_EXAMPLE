@@ -5,4 +5,5 @@
    - name: "create vlans using config module"
      eos_config:
        src: vlans.cfg
+       save_when: always
 
