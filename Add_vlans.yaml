@@ -1,0 +1,13 @@
+---
+  - name: addingVlans
+    hosts: leafs_DC1,leafs_DC2
+    tasks:
+    - name: ensure vlans exist
+      eos_vlans:
+        config:
+          - vlan_id: 55
+            name: "vlan-added-by-ansible"
+            state: active
+          - vlan_id: 65
+            state: active
+        state: deleted

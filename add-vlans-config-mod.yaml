@@ -1,0 +1,8 @@
+---
+- name: "add vlans using config module"
+  hosts: leafs_DC1
+  tasks:
+   - name: "create vlans using config module"
+     eos_config:
+       src: vlans.cfg
+

@@ -1,0 +1,15 @@
+---
+  - name: add keys
+    hosts: all
+    tasks:
+    - name: Add new user
+      eos_user:
+        name: maher
+        privilege: 15
+        role: network-admin
+        state: present
+        nopassword: yes
+    - name: Add user key
+      eos_user:
+        name: maher
+        sshkey: "{ lookup('file', '/home/coder/project/persist/Auth_key.pub')}"
